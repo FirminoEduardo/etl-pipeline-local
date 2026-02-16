@@ -1,0 +1,18 @@
+# Ambientes Virtuais
+.venv/
+venv/
+env/
+
+# Arquivos de Cache do Python e Pytest
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Arquivos de Dados (A Regra de Ouro)
+*.parquet
+*.csv
+*.json
+
+# Configurações de IDEs (VS Code, etc)
+.vscode/
+.idea/
