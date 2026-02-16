@@ -37,3 +37,23 @@ Este projeto utiliza um `Makefile` para orquestrar todos os scripts, facilitando
    python -m venv .venv
    source .venv/bin/activate
    pip install pandas pyarrow sqlalchemy psycopg2-binary faker pytest
+
+2. **Suba o banco de dados via Docker:**
+    ```bash
+    make db-up
+   ``` 
+    Execute o pipeline completo (Geração -> Extração -> Testes -> Transformação):
+    ```bash
+    make run-all
+   ```
+3. **Comandos Individuais (Orquestrador)**
+
+Se preferir rodar passo a passo, você pode utilizar:
+
+    make gerar: Injeta dados sintéticos no Postgres.
+
+    make extrair: Extrai para clientes_raw.parquet.
+
+    make testar: Roda a validação de qualidade de dados (pytest).
+
+    make transformar: Aplica regras de negócio e gera clientes_aprovados.parquet.
