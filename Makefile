@@ -16,10 +16,10 @@ help:
 	@echo "  make run-all     - Executa o fluxo completo"
 
 db-up:
-	docker start meu_postgres || echo "O banco já está rodando ou precisa ser recriado."
+	docker compose up -d
 
 db-down:
-	docker stop meu_postgres
+	docker compose down
 
 gerar:
 	$(PYTHON) gerador_dados.py
